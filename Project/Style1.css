@@ -1,0 +1,110 @@
+﻿* {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background: #ADB7C2;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+header {
+    background-color: #1F2833;
+    display: flex;
+    height : 45px;
+}
+
+#links {
+    width : 95%;
+    display : flex;
+    justify-content : flex-end;
+    align-items : center;
+}
+
+.linkTextHead {
+    text-decoration: none;
+    padding: 2px;
+    color: #ADB7C2;
+}
+
+#HeadLog {
+    margin-left : 25px;
+}
+
+.linkTextMain {
+    padding: 20px 26px;
+    text-decoration: none;
+    font-size : 20px;
+    font-weight :lighter;
+    border : solid;
+    border-color : white;
+    width : 150px;
+    text-align : center;
+
+}
+
+h1 {
+    font-size: 75px;
+    font-weight : bolder;
+    margin-bottom : 10px;
+    color : white;
+    text-shadow : 4px 4px black;
+}
+
+h2 {
+    font-size: 49px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+}
+
+#Log {
+    background-color: #1F2833;
+    color: white;
+}
+
+#Sign {
+    background-color: #7D8894;
+    color: white;
+}
+
+#Content {
+     margin-left : 200px;
+}
+
+.Focus {
+    height : 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items : center;
+}
+
+a:hover {
+    color :aqua;
+}
+
+.Linksmain {
+    display : flex;
+    justify-content : space-evenly;
+}
+
+#Sign {
+    margin-right : 70px;
+}
+
+    #Log:hover, #Sign:hover {
+        color: aqua;
+        border-color: #F5B4AE;
+    }
+
+
+
+
+
+
+
+
+

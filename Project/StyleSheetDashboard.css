@@ -1,0 +1,88 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Uppers, .Table {
+    width : 100%;
+    border : 2px solid black;
+    height : 48%;
+}
+
+
+body {
+    background: #ADB7C2;
+}
+
+header {
+    background: #1F2833;
+    height : 4vh;
+}
+
+.Sidebar {
+    width: 20vw;
+    height: 96vh;
+    background: #7D8894;
+    text-align : center;
+}
+
+.Focus {
+    display : flex;
+}
+
+.Main {
+    display : flex;
+    flex-direction : column;
+    width : 100%;
+    margin-left : 75px;
+    margin-right : 75px;
+}
+
+.Links {
+    display : flex;
+    flex-direction : column;
+    height : 11vh;
+    justify-content : space-between;
+    margin-top : 45px;
+}
+
+    .Links a {
+        padding: 10px;
+        text-decoration: none;
+        background-color: #C6CDD4;
+    }
+
+#Confirm {
+    height : 50px;
+    width : 150px;
+    margin-top : 30px;
+}
+
+.ViewAppointment {
+    height: 80%;
+    width : 40%;
+    border: 2px solid black;
+}
+
+.Uppers {
+    display : flex;
+    margin-top : 50px;
+    justify-content : space-between;
+}
+
+
+.News {
+    height: 90%;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.Table {
+    height: 35%;
+    background-color: #C6CDD4;
+}
+
+table {
+    width : 100%;
+}

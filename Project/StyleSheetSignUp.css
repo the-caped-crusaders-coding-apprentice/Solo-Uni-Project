@@ -1,0 +1,68 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: #ADB7C2;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1F2833;
+    align-items: center;
+}
+
+h2 {
+    font-size: 68px;
+    font-family: 'Poppins', sans-serif;
+    color: #7D8894;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+    font-size: 96px;
+    font-weight: bold;
+    color: #1F2833;
+    font-family: 'Roboto', sans-serif;
+}
+
+#TextMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #7D8894;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.email {
+    margin-top: 50px;
+}
+
+#Name, #Surname, #Password, #IdNumber, #Username, #ButtonSignUp{
+    width: 250px;
+    height: 30px;
+    margin-bottom : 50px;
+}
+
+#ButtonSignUp {
+    margin-top : 125px;
+}
