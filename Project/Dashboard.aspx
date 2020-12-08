@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="Table">
-                    <table>
+                    <table id ="tab">
                         <tr>
                             <th>ID</th>
                             <th>Date</th>
@@ -50,6 +50,10 @@
                 </div>
                 <asp:Button ID="Confirm" runat="server" Text="Confirm" />
             </div>
+            <script>
+                var table = document.getElementById("tab");
+                table.insertAdjacentHTML("beforeend","<tr><td>test</td><td>test</td><td>test</td></tr>")
+            </script>
         </div>
     </form>
 </body>
