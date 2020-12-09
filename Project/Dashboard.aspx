@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="StyleSheetDashboard.css"/>
 </head>
-<body>
+<body onload="loadtext()">
     <form id="form1" runat="server">
              <header>
                 <p>Welcome back:</p>
@@ -52,7 +52,18 @@
             </div>
             <script>
                 var table = document.getElementById("tab");
-                table.insertAdjacentHTML("beforeend","<tr><td>test</td><td>test</td><td>test</td></tr>")
+                table.insertAdjacentHTML("beforeend", "<tr><td>test</td><td>test</td><td>test</td></tr>");
+                function loadtext() {
+                    var xhr = new XMLHttpRequest;
+                    xhr.open("GET", "test.json", true);
+
+                    xhr.onload = function () {
+                        if (this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                    }
+                    xhr.send();
+                }
             </script>
         </div>
     </form>

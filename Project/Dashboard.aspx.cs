@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,7 +15,10 @@ namespace Project
         protected void Page_Load(object sender, EventArgs e)
         {
             string ConnectionString = "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True";
-            Response.Write ( CreateCommandSelect("SELECT * FROM TblDates", ConnectionString));
+            //Response.Write ( CreateCommandSelect("SELECT * FROM TblDates", ConnectionString));
+            string text = CreateCommandSelect("SELECT * FROM TblDates", ConnectionString);
+            System.IO.File.WriteAllText(@"C:\Users\User-pc\source\repos\Project\Project\test.json", text);
+
         }
 
         protected void Confirm_Click(object sender, EventArgs e)
@@ -49,8 +53,11 @@ namespace Project
                 {
                     // Output += reader["ID"].ToString()+" "+ reader["Date"].ToString()+" "+reader["Time"].ToString() ;
                     Values addtoJson = new Values(reader["ID"].ToString(), reader["Date"].ToString(), reader["Time"].ToString());
-                    Output += JsonConvert.SerializeObject(addtoJson);
+                    Output += JsonConvert.SerializeObject(addtoJson)+", ";
                 }
+                Output = Output.Remove(Output.Length-2, 2);
+                Output = Output.Insert(0, "[");
+                Output = Output.Insert(Output.Length, "]");
                 return Output;
             }
         }
