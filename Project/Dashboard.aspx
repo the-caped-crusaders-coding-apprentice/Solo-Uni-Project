@@ -48,7 +48,7 @@
                         </tr>
                     </table>
                 </div>
-                <asp:Button ID="Confirm" runat="server" Text="Confirm" />
+                <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />
             </div>
             <script>
                 var table = document.getElementById("tab");

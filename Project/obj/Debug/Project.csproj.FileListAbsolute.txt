@@ -57,3 +57,5 @@ C:\Users\User-pc\source\repos\Project\Project\obj\Debug\Project.csproj.CoreCompi
 C:\Users\User-pc\source\repos\Project\Project\obj\Debug\Project.csproj.CopyComplete
 C:\Users\User-pc\source\repos\Project\Project\obj\Debug\Project.dll
 C:\Users\User-pc\source\repos\Project\Project\obj\Debug\Project.pdb
+C:\Users\User-pc\source\repos\Project\Project\bin\Newtonsoft.Json.dll
+C:\Users\User-pc\source\repos\Project\Project\bin\Newtonsoft.Json.xml
