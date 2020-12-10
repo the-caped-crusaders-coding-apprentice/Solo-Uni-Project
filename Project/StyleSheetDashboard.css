@@ -86,3 +86,12 @@ header {
 table {
     width : 100%;
 }
+
+th {
+    padding : 5px;
+}
+
+td {
+    text-align : center;
+    padding : 10px;
+}

@@ -28,7 +28,7 @@
                     <div class="ViewAppointment">
                         <div class="heading">
                             <p>x</p>
-                            <p>y</p>
+                            <p id="ticketID">y</p>
                         </div>
                         <hr/>
                         <div>
@@ -52,14 +52,19 @@
             </div>
             <script>
                 var table = document.getElementById("tab");
-                table.insertAdjacentHTML("beforeend", "<tr><td>test</td><td>test</td><td>test</td></tr>");
+               // table.insertAdjacentHTML("beforeend", "<tr><td>test</td><td>test</td><td>test</td></tr>");
                 function loadtext() {
                     var xhr = new XMLHttpRequest;
                     xhr.open("GET", "test.json", true);
 
                     xhr.onload = function () {
                         if (this.status == 200) {
-                            console.log(this.responseText);
+                            var data = JSON.parse(this.responseText);
+                            var value = '"'+"ticketID"+'"';
+                            for (i in data) {
+                                table.insertAdjacentHTML("beforeend", "<tr " + " id = " + data[i].ID + " ><td>" + data[i].ID + "</td><td>" + data[i].Date + "</td><td>" + data[i].Time + "</td></tr>");
+                                document.getElementById(data[i].ID).setAttribute("onclick","document.getElementById("+value+").innerHTML=5")
+                            }
                         }
                     }
                     xhr.send();
