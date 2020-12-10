@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Project.Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs"  Inherits="Project.Dashboard" %>
 
 <!DOCTYPE html>
 
@@ -28,12 +28,12 @@
                     <div class="ViewAppointment">
                         <div class="heading">
                             <p>x</p>
-                            <p id="ticketID">y</p>
+                            <p id="ticketID" runat="server">y</p>
                         </div>
                         <hr/>
                         <div>
-                            <p>z</p>
-                            <p>a</p>
+                            <p id="viewDate">z</p>
+                            <p id ="viewTime">a</p>
                         </div>
                     </div>
                     <div class="News">
@@ -60,10 +60,12 @@
                     xhr.onload = function () {
                         if (this.status == 200) {
                             var data = JSON.parse(this.responseText);
-                            var value = '"'+"ticketID"+'"';
+                            var ticket = '"' + "ticketID" + '"';
+                            var date = '"' + "viewTime" + '"';
+                            var time = '"' + "viewDate" + '"';
                             for (i in data) {
                                 table.insertAdjacentHTML("beforeend", "<tr " + " id = " + data[i].ID + " ><td>" + data[i].ID + "</td><td>" + data[i].Date + "</td><td>" + data[i].Time + "</td></tr>");
-                                document.getElementById(data[i].ID).setAttribute("onclick","document.getElementById("+value+").innerHTML=5")
+                                document.getElementById(data[i].ID).setAttribute("onclick", "document.getElementById(" + ticket + ").innerHTML=" + data[i].ID + ";document.getElementById(" + date + ").innerHTML=" + '"' + data[i].Date + '"' + ";document.getElementById(" + time + ").innerHTML=" + '"' + data[i].Time + '"' + ";");
                             }
                         }
                     }

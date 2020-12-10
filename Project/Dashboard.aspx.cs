@@ -23,7 +23,6 @@ namespace Project
 
         protected void Confirm_Click(object sender, EventArgs e)
         {
-
         }
 
         public class Values 
