@@ -72,10 +72,14 @@
   <ItemGroup>
     <Content Include="Dashboard.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ManageApp.aspx" />
+    <Content Include="ManagePro.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Style1.css" />
     <Content Include="StyleSheetDashboard.css" />
     <Content Include="StyleSheetLogin.css" />
+    <Content Include="StyleSheetManageApp.css" />
+    <Content Include="StyleSheetManagePro.css" />
     <Content Include="StyleSheetSignUp.css" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -94,6 +98,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageApp.aspx.cs">
+      <DependentUpon>ManageApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageApp.aspx.designer.cs">
+      <DependentUpon>ManageApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePro.aspx.cs">
+      <DependentUpon>ManagePro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagePro.aspx.designer.cs">
+      <DependentUpon>ManagePro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">

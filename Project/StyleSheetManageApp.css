@@ -1,0 +1,58 @@
+﻿* {
+    padding : 0;
+    margin :0;
+    box-sizing : border-box;
+}
+
+body {
+    background: #ADB7C2;
+}
+
+header {
+    background: #1F2833;
+    height: 4vh;
+}
+
+.Sidebar {
+    width: 20vw;
+    height: 96vh;
+    background: #7D8894;
+    text-align: center;
+}
+
+.Links {
+    display: flex;
+    flex-direction: column;
+    height: 11vh;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.Links a {
+   padding: 10px;
+   text-decoration: none;
+   background-color: #C6CDD4;
+}
+
+.ViewAppointment {
+    height: 40vh;
+    width: 50vh;
+    border: 2px solid black;
+    margin-left : 50px;
+    margin-top : 50px;
+}
+
+.main {
+    display:flex;
+}
+
+.focus {
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+.viewheading {
+    margin-top : 70px;
+}
