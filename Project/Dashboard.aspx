@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="StyleSheetDashboard.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body onload="loadtext()">
     <form id="form1" runat="server">
@@ -48,9 +49,30 @@
                         </tr>
                     </table>
                 </div>
-                <asp:Button ID="Confirm" runat="server" Text="Confirm" OnClick="Confirm_Click" />
+                <button type="button" id="Confirm" onclick="senddata()" runat="server">Click Me!</button>
             </div>
             <script>
+                function senddata() {
+                    $.ajaxSetup({
+                        cache: false
+                    });
+
+                    var selection = document.getElementById("ticketID").innerHTML;
+
+                    $.ajax({
+                        type: "POST",
+                        url: 'Dashboard.aspx/TestMethod',
+                        data: '{"id":'+selection+'}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        success: function (data) {
+                            console.log(data);
+
+                        }
+                    });
+                }
+
+
                 var table = document.getElementById("tab");
                // table.insertAdjacentHTML("beforeend", "<tr><td>test</td><td>test</td><td>test</td></tr>");
                 function loadtext() {

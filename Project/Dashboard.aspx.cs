@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
@@ -24,6 +26,14 @@ namespace Project
         protected void Confirm_Click(object sender, EventArgs e)
         {
         }
+
+        [System.Web.Services.WebMethod]
+        public static string TestMethod(string id)
+        {
+            CreateCommand("DELETE FROM TblDates WHERE ID =3","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            return id.ToString();
+        }
+
 
         public class Values 
         {
@@ -60,5 +70,19 @@ namespace Project
                 return Output;
             }
         }
+
+
+        private static void CreateCommand(string queryString,
+    string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(
+                       connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }
