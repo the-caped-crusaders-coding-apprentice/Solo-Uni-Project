@@ -16,6 +16,7 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            name.InnerText = Request.QueryString["Email"];
             string ConnectionString = "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True";
             //Response.Write ( CreateCommandSelect("SELECT * FROM TblDates", ConnectionString));
             string text = CreateCommandSelect("SELECT * FROM TblDates", ConnectionString);
@@ -23,14 +24,14 @@ namespace Project
 
         }
 
-        protected void Confirm_Click(object sender, EventArgs e)
+        protected void LinkButton_Click(object sender, EventArgs e)
         {
         }
 
         [System.Web.Services.WebMethod]
         public static string TestMethod(string id)
         {
-            CreateCommand("DELETE FROM TblDates WHERE ID =3","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            CreateCommand("DELETE FROM TblDates WHERE ID = "+id+" ","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
             return id.ToString();
         }
 
@@ -72,11 +73,9 @@ namespace Project
         }
 
 
-        private static void CreateCommand(string queryString,
-    string connectionString)
+        private static void CreateCommand(string queryString,string connectionString)
         {
-            using (SqlConnection connection = new SqlConnection(
-                       connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();

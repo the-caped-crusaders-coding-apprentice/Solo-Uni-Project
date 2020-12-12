@@ -11,15 +11,17 @@
 <body onload="loadtext()">
     <form id="form1" runat="server">
              <header>
-                <p>Welcome back:</p>
+                <p id="name" runat="server"></p>
             </header>
         <div class="Focus">
             <div class="Sidebar">
                 <h1>Dashboard</h1>
                 <hr/>
                 <div class="Links">
-                <a href ="#">Manage Appointments
-                    </a>
+              <asp:LinkButton id="LinkButton1" 
+                   Text="Manage appointments" 
+                   OnClick="LinkButton_Click" 
+                   runat="server"/>
                 <a href ="#">Manage Profile
                     </a>
                 </div>

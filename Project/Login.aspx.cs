@@ -30,7 +30,7 @@ namespace Project
 
                     if (PasswordValue == CreateSqlCommand(string.Format("SELECT Password FROM TblCLient WHERE E_Mail = '{0}'", Email), ConnectionString))
                     {
-                        Response.Redirect("Dashboard.aspx");
+                        Response.Redirect("Dashboard.aspx?Email="+Email);
                     }
                     else
                     {
