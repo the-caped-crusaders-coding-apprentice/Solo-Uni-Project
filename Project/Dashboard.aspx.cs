@@ -26,14 +26,14 @@ namespace Project
 
         protected void LinkButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ManageApp.aspx?Email="+name.InnerText);
+            Response.Redirect("ManageApp.aspx?Email=" + name.InnerText);
         }
 
         [System.Web.Services.WebMethod]
-        public static string TestMethod(string id)
+        public static string TestMethod(string id, string email)
         {
-            CreateCommand("UPDATE TblDates SET Checked = 0 WHERE ID = "+id+" ","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
-            return id.ToString();
+            CreateCommand("UPDATE TblDates SET Checked = 0 WHERE ID = " + id + " ", "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            return id.ToString()+" "+email.ToString();
         }
 
 

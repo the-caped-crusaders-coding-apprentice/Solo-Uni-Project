@@ -11,7 +11,7 @@
 <body onload="loadtext()">
     <form id="form1" runat="server">
              <header>
-                <p id="name" runat="server"></p>
+                <p id="name" runat="server">b</p>
             </header>
         <div class="Focus">
             <div class="Sidebar">
@@ -60,11 +60,13 @@
                     });
 
                     var selection = document.getElementById("ticketID").innerHTML;
+                    var mailname = document.getElementById("name").innerText;
+                    var newmail = '"' + mailname + '"';
 
                     $.ajax({
                         type: "POST",
                         url: 'Dashboard.aspx/TestMethod',
-                        data: '{"id":'+selection+'}',
+                        data: "{id:" + selection + ", email:" + newmail + " }",
                         contentType: "application/json; charset=utf-8",
                         dataType: 'json',
                         success: function (data) {
@@ -73,6 +75,9 @@
                         }
                     });
                 }
+
+
+
 
 
                 var table = document.getElementById("tab");
