@@ -19,19 +19,20 @@ namespace Project
             name.InnerText = Request.QueryString["Email"];
             string ConnectionString = "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True";
             //Response.Write ( CreateCommandSelect("SELECT * FROM TblDates", ConnectionString));
-            string text = CreateCommandSelect("SELECT * FROM TblDates", ConnectionString);
+            string text = CreateCommandSelect("SELECT * FROM TblDates WHERE Checked = 1", ConnectionString);
             System.IO.File.WriteAllText(@"C:\Users\User-pc\source\repos\Project\Project\test.json", text);
 
         }
 
         protected void LinkButton_Click(object sender, EventArgs e)
         {
+            Response.Redirect("ManageApp.aspx?Email="+name.InnerText);
         }
 
         [System.Web.Services.WebMethod]
         public static string TestMethod(string id)
         {
-            CreateCommand("DELETE FROM TblDates WHERE ID = "+id+" ","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            CreateCommand("UPDATE TblDates SET Checked = 0 WHERE ID = "+id+" ","Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
             return id.ToString();
         }
 

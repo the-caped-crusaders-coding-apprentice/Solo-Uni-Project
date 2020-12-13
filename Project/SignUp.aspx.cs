@@ -36,7 +36,7 @@ namespace Project
 
                     CreateCommand("INSERT INTO TblClient (E_Mail, SA_ID, Name, Surname, Password) VALUES (@email, @id, @name, @surname, @password)", ConnectionString,
                     EmailValue, ConvertIdNumber, NameValue, SurnameValue, PasswordValue);
-
+                    Response.Redirect("Dashboard.aspx?Email="+EmailValue);
                    
 
                 }

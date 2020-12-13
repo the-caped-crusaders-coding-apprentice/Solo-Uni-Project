@@ -35,8 +35,8 @@
                         </div>
                         <hr/>
                         <div>
-                            <p id="viewDate">z</p>
-                            <p id ="viewTime">a</p>
+                            <p id="viewDate" runat="server">z</p>
+                            <p id ="viewTime" runat="server">a</p>
                         </div>
                     </div>
                    <asp:Button id="b1" Text="Submit" runat="server" />
