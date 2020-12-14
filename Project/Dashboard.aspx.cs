@@ -33,6 +33,7 @@ namespace Project
         public static string TestMethod(string id, string email)
         {
             CreateCommand("UPDATE TblDates SET Checked = 0 WHERE ID = " + id + " ", "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            CreateCommand("UPDATE TblClient SET TblClient.ID =" + id + "WHERE E_Mail = "+"'"+email+"'"+" ", "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
             return id.ToString()+" "+email.ToString();
         }
 

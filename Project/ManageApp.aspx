@@ -19,29 +19,33 @@
                     <hr/>
                     <div class="Links">
                        <asp:LinkButton id="LinkButton1" 
-                       Text="Manage appointments" 
+                       Text="Make appointment" 
                        OnClick="LinkButton_Click" 
                        runat="server"/>
-                        <a href ="#">Manage Profile
-                        </a>
+                       <asp:LinkButton id="LinkButton2" 
+                       Text="Manage Profile" 
+                       OnClick="LinkButton2_Click" 
+                       runat="server"/>
                     </div>
                </div>
                <div class="focus">
                     <h1 class="viewheading">View Appointment</h1>
                     <div class="ViewAppointment">
                         <div class="heading">
-                            <p>x</p>
-                            <p id="ticketID" runat="server">y</p>
+                            <p></p>
+                            <p id="ticketID" runat="server">No Appointments</p>
                         </div>
                         <hr/>
                         <div>
-                            <p id="viewDate" runat="server">z</p>
-                            <p id ="viewTime" runat="server">a</p>
+                            <p id="viewDate" runat="server"></p>
+                            <p id ="viewTime" runat="server"></p>
                         </div>
                     </div>
-                   <asp:Button id="b1" Text="Submit" runat="server" />
-                   <asp:Button id="Button1" Text="Submit" runat="server" />
-                   <asp:Button id="Button2" Text="Submit" runat="server" />
+                   <div class="buttons">
+                    <asp:Button id="Delete" class="buttonsIN" Text="Submit" runat="server" OnClick="Delete_Click" />
+                    <button type="button" class="buttonsIN" id="show">Click Me!</button>
+                    <button type="button" class="buttonsIN" id="Hide">Click Me!</button>
+                   </div>
                </div>
            </div>
         </div>

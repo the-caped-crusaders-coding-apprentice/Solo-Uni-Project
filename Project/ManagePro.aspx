@@ -21,16 +21,33 @@
                        <asp:LinkButton id="LinkButton1" 
                        Text="Manage appointments" 
                        runat="server"/>
-                        <a href ="#">Manage Profile
-                        </a>
+                       <asp:LinkButton id="LinkButton2" 
+                       Text="Manage appointments" 
+                       runat="server"/>
                     </div>
                </div>
-               <div class="focus">
-                    <asp:TextBox id="tb1" runat="server" />
-                    <asp:TextBox id="TextBox1" runat="server" />
-
+               <div class="ui">
+                   <div class="focus">
+                       <div class ="changemail">
+                            <asp:Button id="b1" Text="Change Email" runat="server" OnClick="b1_Click" />
+                            <asp:TextBox id="tb1" runat="server" Text="Enter new Email" onfocus="clearbox1()"/>
+                       </div>
+                       <div class="changepassword">
+                            <asp:Button id="b2" Text="Change Password" runat="server" OnClick="b2_Click" />
+                            <asp:TextBox id="tb2" runat="server" Text="Enter new Password" onfocus="clearbox2()"/>
+                       </div>
+                   </div>
                </div>
            </div>
+            <script>
+                function clearbox2() {
+                    document.getElementById("tb2").value = "";
+                }
+
+                function clearbox1() {
+                    document.getElementById("tb1").value = "";
+                }
+            </script>
         </div>
     </form>
 </body>
