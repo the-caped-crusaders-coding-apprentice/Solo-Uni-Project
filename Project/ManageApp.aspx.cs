@@ -35,9 +35,9 @@ namespace Project
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ticketID.InnerText = reader["ID"].ToString();
-                    viewDate.InnerText = reader["Date"].ToString();
-                    viewTime.InnerText = reader["Time"].ToString();
+                    ticketID.InnerText = "ID:  " + reader["ID"].ToString();
+                    viewDate.InnerText = "Date:  " + reader["Date"].ToString();
+                    viewTime.InnerText = "Time:  " + reader["Time"].ToString();
                 }
             }
         }

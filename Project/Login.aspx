@@ -16,9 +16,9 @@
             </div>
             <div id ="main">
                 <p class ="email">E-mail</p>
-                <asp:TextBox ID="Username" runat="server" Font-Size="Medium"></asp:TextBox>
+                <asp:TextBox ID="Username" runat="server" Font-Size="Medium" style="text-align:center"></asp:TextBox>
                 <p>Password</p>
-                <asp:TextBox ID="Password" runat="server" Font-Size="Medium"></asp:TextBox>
+                <asp:TextBox ID="Password" runat="server" Font-Size="Medium" style="text-align:center"></asp:TextBox>
                 <asp:Button ID="LoginButton" runat="server" Text="Log in" OnClick="LoginButton_Click" />
             </div>
         </section>

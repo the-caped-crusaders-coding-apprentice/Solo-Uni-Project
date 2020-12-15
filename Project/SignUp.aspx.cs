@@ -43,6 +43,7 @@ namespace Project
                 else
                 {
                     Username.Text = "Email already used";
+                    Username.Style.Add("border", "2px solid red");
                 }
 
                
@@ -54,22 +55,27 @@ namespace Project
             if (Username.Text == "")
             {
                 Username.Text = "Enter Email";
+                Username.Style.Add("border", "2px solid red");
             }
             if (Name.Text == "")
             {
                 Name.Text = "Enter Name";
+                Name.Style.Add("border", "2px solid red");
             }
             if (IdNumber.Text == "")
             {
                 IdNumber.Text = "Enter ID Number";
+                IdNumber.Style.Add("border", "2px solid red");
             }
             if (Surname.Text == "")
             {
                 Surname.Text = "Enter Surname";
+                Surname.Style.Add("border", "2px solid red");
             }
             if (Password.Text == "")
             {
                 Password.Text = "Enter Password";
+                Password.Style.Add("border", "2px solid red");
             }
             else
             {

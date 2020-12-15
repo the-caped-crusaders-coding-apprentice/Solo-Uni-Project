@@ -22,21 +22,29 @@
                    Text="Manage appointments" 
                    OnClick="LinkButton_Click" 
                    runat="server"/>
-                <a href ="#">Manage Profile
-                    </a>
+              <asp:LinkButton id="LinkButton2" 
+                   Text="Manage Profile" 
+                   OnClick="LinkButton_Click1" 
+                   runat="server"/>
                 </div>
             </div>
             <div class="Main">
                 <div class="Uppers">
-                    <div class="ViewAppointment">
+                    <div id="view" class="ViewAppointment">
                         <div class="heading">
-                            <p>x</p>
-                            <p id="ticketID" runat="server">y</p>
+                            <p>ID:&nbsp;&nbsp;</p>
+                            <p id="ticketID" runat="server"></p>
                         </div>
                         <hr/>
-                        <div>
-                            <p id="viewDate">z</p>
-                            <p id ="viewTime">a</p>
+                        <div id="timedate">
+                            <div id="datedisplay">
+                                <p>Date:&nbsp;&nbsp;</p>
+                                <p id="viewDate"></p>
+                            </div>
+                            <div id="displaytime">
+                                <p>Time:&nbsp;&nbsp;</p>
+                                <p id ="viewTime"></p>
+                            </div>
                         </div>
                     </div>
                     <div class="News">
@@ -51,7 +59,7 @@
                         </tr>
                     </table>
                 </div>
-                <button type="button" id="Confirm" onclick="senddata()" runat="server">Click Me!</button>
+                <button type="button" id="Confirm" onclick="senddata(); hidetable(); glow();" runat="server">Book Appointment</button>
             </div>
             <script>
                 function senddata() {
@@ -74,6 +82,14 @@
 
                         }
                     });
+                }
+
+                function hidetable() {
+                    document.getElementById("tab").style.display = "none";
+                }
+
+                function glow() {
+                    document.getElementById("view").style.border = "5px solid #00e600";
                 }
 
                 var table = document.getElementById("tab");

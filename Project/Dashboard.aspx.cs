@@ -85,5 +85,9 @@ namespace Project
             }
         }
 
+        protected void LinkButton_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("ManagePro.aspx?Email=" + name.InnerText);
+        }
     }
 }

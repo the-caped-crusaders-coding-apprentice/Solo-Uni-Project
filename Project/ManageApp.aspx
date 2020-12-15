@@ -43,8 +43,8 @@
                     </div>
                    <div class="buttons">
                     <asp:Button id="Delete" class="buttonsIN" Text="Remove" runat="server" OnClick="Delete_Click" />
-                    <button type="button" id="show" class="buttonsIN" onclick="addshow()" >Click Me!</button>
-                    <button type="button" class="buttonsIN" id="Hide" onclick="addhide()">Click Me!</button>
+                    <button type="button" id="show" class="buttonsIN" onclick="addshow()" >Hide</button>
+                    <button type="button" class="buttonsIN" id="Hide" onclick="addhide()">Show</button>
                    </div>
                </div>
            </div>

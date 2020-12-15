@@ -53,18 +53,24 @@ header {
         padding: 10px;
         text-decoration: none;
         background-color: #C6CDD4;
+        color: #1F2833;
     }
 
 #Confirm {
     height : 50px;
     width : 150px;
     margin-top : 30px;
+    position : absolute;
+    left : 19%;
+    top : 45%;
 }
 
 .ViewAppointment {
     height: 80%;
     width : 40%;
     border: 2px solid black;
+    font-size : 25px;
+    font-weight : 300;
 }
 
 .Uppers {
@@ -83,6 +89,7 @@ header {
 .Table {
     height: 35%;
     background: #ADB7C2;
+    margin-top : 50px;
 }
 
 table {
@@ -127,5 +134,23 @@ tr:hover td {
 #dash {
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+#displaytime, #datedisplay {
+    display: flex;
+}
+
+#timedate {
+    height : 80%;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-evenly;
+    margin-left : 35px;
+}
+
+.heading {
+    display : flex;
+    justify-content : flex-end;
+    margin-right : 10px;
 }
 

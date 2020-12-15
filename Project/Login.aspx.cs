@@ -35,6 +35,7 @@ namespace Project
                     else
                     {
                         Password.Text = "incorrect password";
+                        Password.Style.Add("border", "3px solid red");
                     }
 
                 }
@@ -42,6 +43,7 @@ namespace Project
                 else
                 {
                     Username.Text = "Enter valid email";
+                    Username.Style.Add("border", "3px solid red");
                 }
             
             }
@@ -55,10 +57,12 @@ namespace Project
             if (Username.Text == "")
             {
                 Username.Text = "Please enter an Email address";
+                Username.Style.Add("border", "3px solid red");
             }
             if (Password.Text == "")
             {
                 Password.Text = "Please enter your password";
+                Password.Style.Add("border", "3px solid red");
             }
             else
             {

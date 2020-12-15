@@ -1,7 +1,9 @@
-﻿* {
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif
 }
 
 body {
@@ -28,11 +30,12 @@ header {
     margin-top: 45px;
 }
 
-.Links a {
-   padding: 10px;
-   text-decoration: none;
-   background-color: #C6CDD4;
-}
+    .Links a {
+        padding: 10px;
+        text-decoration: none;
+        background-color: #C6CDD4;
+        color: #1F2833;
+    }
 
 .main {
     display: flex;
@@ -75,4 +78,10 @@ header {
 
 img {
     margin-bottom : 50px;
+}
+
+#timedate {
+    display : flex;
+    flex-direction :column;
+    flex-flow : column-reverse;
 }

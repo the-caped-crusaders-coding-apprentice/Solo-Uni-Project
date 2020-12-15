@@ -26,15 +26,19 @@ namespace Project
                 if (CheckUnique(string.Format("SELECT E_Mail FROM TblClient WHERE E_Mail = '{0}'", newEmail), "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True") == "Unique")
                 {
                     CreateCommand(string.Format("UPDATE TblClient SET E_Mail = '{0}' WHERE E_Mail = '{1}'", newEmail, EmailValue), "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+                    tb2.Text = "Email updated";
+                    tb2.Style.Add("border", "2px solid green");
                 }
 
                 else
                 {
                     tb1.Text = "This Email is in use";
+                    tb1.Style.Add("border", "2px solid red");
                 }
             }
             else {
                 tb1.Text = "Enter a valid email";
+                tb1.Style.Add("border", "2px solid red");
             }
                
         }
@@ -75,9 +79,12 @@ namespace Project
             if (newpassword != "")
             {
                 CreateCommand(string.Format("UPDATE TblClient SET Password ='{0}' WHERE E_Mail ='{1}'", newpassword, EmailValue), "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+                tb2.Text = "Password updated";
+                tb2.Style.Add("border", "2px solid green");
             }
             else {
                 tb2.Text = "enter password";
+                tb2.Style.Add("border", "2px solid red");
             }
         }
 
