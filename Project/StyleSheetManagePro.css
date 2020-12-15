@@ -51,7 +51,7 @@ header {
 }
 
 .ui {
-    margin-top : 250px;
+    margin-top : 10px;
     width : 100%;
 }
 
@@ -62,4 +62,17 @@ header {
  #b1, #b2 {
     margin-right : 20px;
     width : 130px;
+}
+
+#dash {
+    margin-top : 20px;
+    margin-bottom : 10px;
+}
+
+#LinkButton1:hover {
+    background-color : ghostwhite;
+}
+
+img {
+    margin-bottom : 50px;
 }

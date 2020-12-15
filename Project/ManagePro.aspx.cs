@@ -80,5 +80,15 @@ namespace Project
                 tb2.Text = "enter password";
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx?Email=" + Request.QueryString["Email"]);
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageApp.aspx?Email=" + Request.QueryString["Email"]);
+        }
     }
 }

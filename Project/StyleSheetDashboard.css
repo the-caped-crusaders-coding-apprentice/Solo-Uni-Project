@@ -1,12 +1,14 @@
-﻿* {
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif
 }
 
 .Uppers, .Table {
     width : 100%;
-    border : 2px solid black;
     height : 48%;
 }
 
@@ -80,7 +82,7 @@ header {
 
 .Table {
     height: 35%;
-    background-color: #C6CDD4;
+    background: #ADB7C2;
 }
 
 table {
@@ -88,10 +90,42 @@ table {
 }
 
 th {
-    padding : 5px;
+    padding: 20px;
+    background-color: #1F2833;
+    color : white;
+    font-weight : bold;
+    font-size : 20px;
 }
 
 td {
-    text-align : center;
-    padding : 10px;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid grey;
+    transition: transform 0.3s linear;
 }
+
+table {
+    border-collapse: collapse;
+    border-bottom: 3px solid #1F2833;
+}
+
+tr {
+    background-color:whitesmoke;
+}
+
+tr:hover {
+    background-color :cornflowerblue;
+    cursor : pointer;
+    color : mediumspringgreen;
+    text-shadow: 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+tr:hover td {
+   transform: scale(1.3,1.3);
+}
+
+#dash {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+

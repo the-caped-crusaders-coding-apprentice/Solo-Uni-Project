@@ -14,8 +14,8 @@
                <p id="name" runat="server"></p>
            </header>
            <div class ="main">
-               <div class="Sidebar">
-                    <h1>Dashboard</h1>
+               <div id="sidebar" class="Sidebar">
+                    <h1 id="dash">Dashboard</h1>
                     <hr/>
                     <div class="Links">
                        <asp:LinkButton id="LinkButton1" 
@@ -29,11 +29,11 @@
                     </div>
                </div>
                <div class="focus">
-                    <h1 class="viewheading">View Appointment</h1>
-                    <div class="ViewAppointment">
+                    <h1 class="viewheading">View Active Appointments</h1>
+                    <div id="view" class="ViewAppointment">
                         <div class="heading">
                             <p></p>
-                            <p id="ticketID" runat="server">No Appointments</p>
+                            <p id="ticketID" runat="server">No Active Appointments</p>
                         </div>
                         <hr/>
                         <div>
@@ -42,12 +42,29 @@
                         </div>
                     </div>
                    <div class="buttons">
-                    <asp:Button id="Delete" class="buttonsIN" Text="Submit" runat="server" OnClick="Delete_Click" />
-                    <button type="button" class="buttonsIN" id="show">Click Me!</button>
-                    <button type="button" class="buttonsIN" id="Hide">Click Me!</button>
+                    <asp:Button id="Delete" class="buttonsIN" Text="Remove" runat="server" OnClick="Delete_Click" />
+                    <button type="button" id="show" class="buttonsIN" onclick="addshow()" >Click Me!</button>
+                    <button type="button" class="buttonsIN" id="Hide" onclick="addhide()">Click Me!</button>
                    </div>
                </div>
            </div>
+            <script>
+                function addshow() {
+                    document.getElementById("show").addEventListener(onmouseover, hide());
+                    function hide() {
+                        document.getElementById("view").style.display = "none";
+                        document.getElementById("Delete").style.display = "none";
+                    }
+                }
+
+                function addhide() {
+                    document.getElementById("Hide").addEventListener(onmouseover, hide());
+                    function hide() {
+                        document.getElementById("view").style.display = "block";
+                        document.getElementById("Delete").style.display = "block";
+                    }
+                }
+            </script>
         </div>
     </form>
 </body>

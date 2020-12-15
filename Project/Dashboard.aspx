@@ -15,7 +15,7 @@
             </header>
         <div class="Focus">
             <div class="Sidebar">
-                <h1>Dashboard</h1>
+                <h1 id="dash">Dashboard</h1>
                 <hr/>
                 <div class="Links">
               <asp:LinkButton id="LinkButton1" 
@@ -75,10 +75,6 @@
                         }
                     });
                 }
-
-
-
-
 
                 var table = document.getElementById("tab");
                // table.insertAdjacentHTML("beforeend", "<tr><td>test</td><td>test</td><td>test</td></tr>");
