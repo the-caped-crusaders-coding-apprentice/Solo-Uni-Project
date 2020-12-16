@@ -10,10 +10,12 @@ namespace Project
 {
     public partial class ManageApp : System.Web.UI.Page
     {
+        //display active appointments using sql on page load
         protected void Page_Load(object sender, EventArgs e)
         {
             var EmailVal = Request.QueryString["Email"];
             CreateCommand("SELECT TblDates.ID, Date, Time FROM TblDates,TblClient WHERE TblDates.ID = TblClient.ID AND E_Mail =" + "'" + EmailVal + "'", "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
+            CreateCommand("update dat set dat.Checked = 1 from TblDates dat join TblClient clt on dat.ID = clt.ID where dat.Checked = 0 and clt.E_Mail =" + "'" + EmailVal + "'", "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True");
         }
 
         protected void LinkButton_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Project
             }
         }
 
-
+        //sql method for remove appointment 
         protected void Delete_Click(object sender, EventArgs e)
         {
             var EmailVal = Request.QueryString["Email"];

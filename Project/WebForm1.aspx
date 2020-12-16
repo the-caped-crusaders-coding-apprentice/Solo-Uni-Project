@@ -10,7 +10,6 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <h3>logo</h3>
             <div id ="links">
             <a href="login.aspx" class ="linkTextHead">Log in</a>
             <a href="SignUp.aspx" id ="HeadLog" class ="linkTextHead">Sign up</a>
@@ -28,7 +27,22 @@
             </div>
         </main>
         <div class ="image">
-            <img src ="use.png" />
+            <div class="wrap">
+        <div class="cube">
+            <div class="front">
+                <img src="Untitled-1.png" alt="s"/>
+            </div>
+            <div class="back">
+                <img src="Untitled-1.png" alt="s"/>
+            </div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"><img src="pill.png" alt="s"/>
+            </div>
+            <div class="right"><img src="pill.png" alt="s"/>
+            </div>
+        </div>
+    </div>
         </div>
     </div>
     </form>

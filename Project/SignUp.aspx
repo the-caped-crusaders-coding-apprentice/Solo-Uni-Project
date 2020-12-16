@@ -29,6 +29,11 @@
                 <asp:Button ID="ButtonSignUp" runat="server" Text="Register" OnClick="ButtonSignUp_Click" />
             </div>
         </section>
+            <script>
+                function msg() {
+                    alert("Account created sucessfully!")
+                }
+            </script>
         </div>
     </form>
 </body>

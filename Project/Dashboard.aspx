@@ -32,17 +32,17 @@
                 <div class="Uppers">
                     <div id="view" class="ViewAppointment">
                         <div class="heading">
-                            <p>ID:&nbsp;&nbsp;</p>
+                            <p id="headID" class="text">ID:&nbsp;&nbsp;</p>
                             <p id="ticketID" runat="server"></p>
                         </div>
                         <hr/>
                         <div id="timedate">
                             <div id="datedisplay">
-                                <p>Date:&nbsp;&nbsp;</p>
+                                <p class="text">DATE:&nbsp;&nbsp;</p>
                                 <p id="viewDate"></p>
                             </div>
                             <div id="displaytime">
-                                <p>Time:&nbsp;&nbsp;</p>
+                                <p class="text">TIME:&nbsp;&nbsp;</p>
                                 <p id ="viewTime"></p>
                             </div>
                         </div>
@@ -59,7 +59,14 @@
                         </tr>
                     </table>
                 </div>
-                <button type="button" id="Confirm" onclick="senddata(); hidetable(); glow();" runat="server">Book Appointment</button>
+                <button type="button" id="Confirm" onclick="senddata(); hidetable(); glow(); modalshow();" runat="server">Book Appointment</button>
+                <div id="myModal" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Appointment booked succesfully...</p>
+                      </div>
+                    </div>
             </div>
             <script>
                 function senddata() {
@@ -84,12 +91,31 @@
                     });
                 }
 
+                var span = document.getElementsByClassName("close")[0];
+
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                function modalshow() {
+                    document.getElementById("myModal").style.display = "block";
+
+                }
+
+                var modal = document.getElementById("myModal");
+
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
                 function hidetable() {
                     document.getElementById("tab").style.display = "none";
                 }
 
                 function glow() {
-                    document.getElementById("view").style.border = "5px solid #00e600";
+                    document.getElementById("view").style.boxShadow = "0px 0px 8px 9px #1F2833 ";
                 }
 
                 var table = document.getElementById("tab");
@@ -102,8 +128,8 @@
                         if (this.status == 200) {
                             var data = JSON.parse(this.responseText);
                             var ticket = '"' + "ticketID" + '"';
-                            var date = '"' + "viewTime" + '"';
-                            var time = '"' + "viewDate" + '"';
+                            var time = '"' + "viewTime" + '"';
+                            var date = '"' + "viewDate" + '"';
                             for (i in data) {
                                 table.insertAdjacentHTML("beforeend", "<tr " + " id = " + data[i].ID + " ><td>" + data[i].ID + "</td><td>" + data[i].Date + "</td><td>" + data[i].Time + "</td></tr>");
                                 document.getElementById(data[i].ID).setAttribute("onclick", "document.getElementById(" + ticket + ").innerHTML=" + data[i].ID + ";document.getElementById(" + date + ").innerHTML=" + '"' + data[i].Date + '"' + ";document.getElementById(" + time + ").innerHTML=" + '"' + data[i].Time + '"' + ";");

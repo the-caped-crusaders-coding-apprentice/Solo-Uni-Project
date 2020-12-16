@@ -50,6 +50,7 @@ namespace Project
             }
         }
 
+        // method to validate textbox state
         public bool CheckNotEmpty()
         {
             if (Username.Text == "")
@@ -87,6 +88,7 @@ namespace Project
 
         }
 
+        // sql method for update
         private static void CreateCommand(string queryString, string connectionString, string email, int id, string name, string surname, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -108,7 +110,7 @@ namespace Project
         }
 
 
-
+        // sql method to check unique
         private static string CheckUnique(string queryString, string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

@@ -14,21 +14,24 @@ namespace Project
 {
     public partial class Dashboard : System.Web.UI.Page
     {
+        // tranfer data from db to json file
         protected void Page_Load(object sender, EventArgs e)
         {
             name.InnerText = Request.QueryString["Email"];
             string ConnectionString = "Data Source=DESKTOP-TDEU838;Initial Catalog=DoctorDB;Integrated Security=True";
-            //Response.Write ( CreateCommandSelect("SELECT * FROM TblDates", ConnectionString));
             string text = CreateCommandSelect("SELECT * FROM TblDates WHERE Checked = 1", ConnectionString);
             System.IO.File.WriteAllText(@"C:\Users\User-pc\source\repos\Project\Project\test.json", text);
 
         }
 
+        //redirect link with post request
         protected void LinkButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("ManageApp.aspx?Email=" + name.InnerText);
         }
 
+
+        // web method that works with ajax post request to excute sql
         [System.Web.Services.WebMethod]
         public static string TestMethod(string id, string email)
         {
@@ -37,7 +40,7 @@ namespace Project
             return id.ToString()+" "+email.ToString();
         }
 
-
+        //class for date object
         public class Values 
         {
             public string ID;
@@ -53,6 +56,8 @@ namespace Project
 
         }
 
+
+        // method that serialses object to json format
         private static string CreateCommandSelect(string queryString, string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
             <header>
-               <p id="name" runat="server"></p>
+               <a href="Webform1.aspx" id="logout">LogOut</a>
            </header>
            <div class ="main">
                <div class="Sidebar">
